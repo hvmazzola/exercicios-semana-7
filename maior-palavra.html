@@ -1,0 +1,40 @@
+<html lang="pt-br"></html>
+
+  <p>Insira a palavra a inverter:</p>
+  <div class="field-palavra"> <label>Palavra</label>
+  </div>
+  <input type="text" name="palavra" text="palavra" placeholder="Ex: banana" maxlength="200" id="palavra"  min="0" max="119">
+
+  <div>
+    <input type="button" id="invert" name="calculate" value="inverter">
+  </div>
+</body>
+<script>
+    // Crie a lógica a partir deste ponto
+
+    let array = ['java', 'javascript', 'python', 'html', 'css'];
+
+    function maiorPalavra(stringArray) {
+
+      var testeMaior = stringArray[0];
+      var testeMenor = stringArray[0];
+
+      for (var i = (stringArray.length) - 1; i >= 0; i--) {
+        if (stringArray[i].length > testeMaior.length){
+          testeMaior = stringArray[i];
+        }
+      }
+
+      for (var i = (stringArray.length) - 1; i >= 0; i--) {
+        if (stringArray[i].length < testeMenor.length){
+          testeMenor = stringArray[i];
+        }
+      }
+
+    return console.log('Maior palavra: ' + testeMaior + '. Menor palavra: ' + testeMenor + '.');
+
+    }
+
+    maiorPalavra(array);
+</script>
+</html>

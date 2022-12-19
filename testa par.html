@@ -1,0 +1,27 @@
+<html lang="pt-br">
+  <p>Insira um número para testar se é par:</p>
+  <div class="field-numero"> <label>Número</label>
+  </div>
+  <input type="number" name="numero" text="numero" placeholder="Ex: 63" maxlength="200" id="numero"  min="0" max="119">
+  
+  <div>
+    <input type="button" id="submit" name="calculate" value="Calcular">
+  </div>
+</body>
+<script>
+   const calculate = document.getElementById('submit')
+    // Crie a lógica a partir deste ponto
+   calculate.addEventListener('click', () => {
+
+      const numero = document.getElementById('numero').value
+
+      if ((numero % 2) == 0) {
+        alert('O número é par.')
+      }else {
+        alert('O número é ímpar.')
+      }
+    
+    
+  })
+</script>
+</html>

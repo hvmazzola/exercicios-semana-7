@@ -1,0 +1,43 @@
+<html lang="pt-br">
+  <p>Coloque os dados do seu polígono regular na calculadora e calcule seu tipo e área:</p>
+  <div class="field-lado"> <label>Qnt. de Lados</label>
+  </div>
+  <input type="number" name="lado" text="Qnt. de Lados" placeholder="Ex: 4" maxlength="200" id="lado"  min="0" max="119"> <span class="caption">lados</span>
+  
+  <div class="field-comprimento"> <label>Comprimento dos lados</label>
+  </div>
+  <input type="number" name="comprimento" text="Comprimento dos lados" placeholder="Ex: 16" maxlength="200" id="comprimento"  min="0" max="119"> <span class="caption">cm</span>
+
+  <div>
+    <input type="button" id="submit" name="calculate" value="Calcular">
+  </div>
+</body>
+<script>
+   const calculate = document.getElementById('submit')
+    // Crie a lógica a partir deste ponto
+   calculate.addEventListener('click', () => {
+
+      const lado = document.getElementById('lado').value
+      const comprimento = document.getElementById('comprimento').value
+
+      let area = 0;
+
+      if (lado < 3) {
+        alert('O objeto não é um polígono.')
+      }else if (lado == 3) {
+        area = (comprimento * ((comprimento * 1,73) / 2))
+        alert('O objeto é um triângulo de área ' + area + ' cm².')
+      }else if (lado == 4) {
+        area = comprimento * comprimento
+        alert('O objeto é um quadrado de área ' + area + ' cm².')
+      }else if (lado == 5) {
+        area = (3*(comprimento*comprimento)*1,73)/2
+        alert('O objeto é um pentágono de área ' + area + ' cm².')
+      }else {
+        alert('O objeto tem muitos lados e não pode ser calculado.')
+      }
+    
+    
+  })
+</script>
+</html>

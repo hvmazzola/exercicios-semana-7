@@ -1,0 +1,41 @@
+<html lang="pt-br"></html>
+
+  <p>Insira a palavra a inverter:</p>
+  <div class="field-palavra"> <label>Palavra</label>
+  </div>
+  <input type="text" name="palavra" text="palavra" placeholder="Ex: banana" maxlength="200" id="palavra"  min="0" max="119">
+
+  <div>
+    <input type="button" id="invert" name="calculate" value="inverter">
+  </div>
+</body>
+<script>
+
+    function primo(numero) {
+
+      let numeroPrimoMaisAlto = 0;
+      let contador = 0;
+
+      for (var i = 1; i <= numero; i++) {
+
+        contador = 0;
+
+        for (var j = 1; j <= i; j++) {
+          if ((i % j) == 0){
+            contador ++;
+          }
+        }
+
+        if (contador == 2) {
+            numeroPrimoMaisAlto = i;
+        }
+      }
+
+
+    return console.log('Maior primo: ' + numeroPrimoMaisAlto + '.');
+
+    }
+
+    primo(100);
+</script>
+</html>

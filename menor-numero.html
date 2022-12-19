@@ -1,0 +1,35 @@
+<html lang="pt-br"></html>
+
+  <p>Insira a palavra a inverter:</p>
+  <div class="field-palavra"> <label>Palavra</label>
+  </div>
+  <input type="text" name="palavra" text="palavra" placeholder="Ex: banana" maxlength="200" id="palavra"  min="0" max="119">
+
+  <div>
+    <input type="button" id="invert" name="calculate" value="inverter">
+  </div>
+</body>
+<script>
+    // Crie a lógica a partir deste ponto
+
+    let array = [2,4,6,7,10,0,-3];
+
+    function menorNumero(stringArray) {
+
+      var testeMenor = stringArray[0];
+      var indexMenor = 0;
+
+      for (var i = (stringArray.length) - 1; i >= 0; i--) {
+        if (stringArray[i] < testeMenor){
+          testeMenor = stringArray[i];
+          indexMenor = i;
+        }
+      }
+
+      return console.log('Menor numero: ' + testeMenor + '. Index do número no array: ' + indexMenor + '.');
+
+    }
+
+    menorNumero(array);
+</script>
+</html>

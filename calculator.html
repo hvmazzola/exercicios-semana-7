@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">   
+    <title>Calculator!</title>
+    <style>
+        table {
+            width: 50%;
+        }
+        button {
+            width: 100%;
+            font-size: 150%;
+        }
+        .ac {
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="4"><button id="resultado"></button></td>
+      </tr>
+      <tr>
+        <td><button id="um">1</button></td>
+        <td><button id="dois">2</button></td>
+        <td><button id="tres">3</button></td>
+        <td><button id="mais">+</button></td>
+      </tr>
+      <tr>
+        <td><button id="quatro">4</button></td>
+        <td><button id="cinco">5</button></td>
+        <td><button id="seis">6</button></td>
+        <td><button id="menos">-</button></td>
+      </tr>
+      <tr>
+        <td><button id="sete">7</button></td>
+        <td><button id="oito">8</button></td>
+        <td><button id="nove">9</button></td>
+        <td><button id="vezes">*</button></td>
+      </tr>
+      <tr>
+        <td colspan="3"><button id="zero">0</button></td>
+        <td colspan="3"><button id="divisao">/</button></td>          
+      </tr>
+      <tr>
+        <td colspan="2"><button class="ac" id="limpar">AC</button></td>
+        <td><button id="ponto">.</button></td>
+        <td><button id="igual">=</button></td>          
+      </tr>
+    </table>
+  </body>
+  <script>
+
+    const um = document.getElementById('um')
+    const dois = document.getElementById('dois')
+    const tres = document.getElementById('tres')
+    const quatro = document.getElementById('quatro')
+    const cinco = document.getElementById('cinco')
+    const seis = document.getElementById('seis')
+    const sete = document.getElementById('sete')
+    const oito = document.getElementById('oito')
+    const nove = document.getElementById('nove')
+    const zero = document.getElementById('zero')
+
+    const mais = document.getElementById('mais')
+    const menos = document.getElementById('menos')
+    const vezes = document.getElementById('vezes')
+    const divisao = document.getElementById('divisao')
+    const ponto = document.getElementById('ponto')
+    const igual = document.getElementById('igual')
+    const limpar = document.getElementById('limpar')
+
+    const resultado = document.getElementById('resultado')
+
+    let expressao = 0;
+    let soma = 0;
+    let subtracao = 0;
+    let fracao = 0;
+    let multiplicacao = 0;
+    let resultadoFinal = 0;
+
+    um.addEventListener('click', () => {
+
+    resultado.innerHTML += 1;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+
+    })
+
+    dois.addEventListener('click', () => {
+    
+    resultado.innerHTML += 2;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+
+    })
+
+    tres.addEventListener('click', () => {
+
+    resultado.innerHTML += 3;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+
+    })
+
+    quatro.addEventListener('click', () => {
+
+    resultado.innerHTML += 4;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+
+    })
+
+    cinco.addEventListener('click', () => {
+    
+    resultado.innerHTML += 5;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    })
+
+    seis.addEventListener('click', () => {
+
+    resultado.innerHTML += 6;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    
+    })
+
+    sete.addEventListener('click', () => {
+
+    resultado.innerHTML += 7;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    
+    })
+
+    oito.addEventListener('click', () => {
+
+    resultado.innerHTML += 8;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    
+    })
+
+    nove.addEventListener('click', () => {
+
+    resultado.innerHTML += 9;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    
+    })
+
+    zero.addEventListener('click', () => {
+
+    resultado.innerHTML += 0;
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    
+    })
+
+    ponto.addEventListener('click', () => {
+
+    resultado.innerHTML += '.';
+    expressao = 0;
+    expressao = resultado.innerHTML;
+    
+    })
+
+    mais.addEventListener('click', () => {
+
+    soma = parseFloat(expressao);    
+    expressao = 0;
+    resultado.innerHTML = null;
+    
+    })
+
+    menos.addEventListener('click', () => {
+
+    subtracao = parseFloat(expressao);
+    expressao = 0;
+    resultado.innerHTML = null;
+    
+    })
+
+    vezes.addEventListener('click', () => {
+
+    multiplicacao = parseFloat(expressao);
+    expressao = 0;
+    resultado.innerHTML = null;
+    
+    })
+
+    divisao.addEventListener('click', () => {
+
+    fracao = parseFloat(expressao);
+    expressao = 0;
+    resultado.innerHTML = null;
+    
+    })
+
+    limpar.addEventListener('click', () => {
+
+    soma = 0;
+    subtracao = 0;
+    fracao = 0;
+    multiplicacao = 0;
+    expressao = 0;
+    resultado.innerHTML = null;
+    
+    })
+
+    igual.addEventListener('click', () => {
+
+    if (soma != 0){
+    resultadoFinal = soma + parseFloat(expressao);
+    resultado.innerHTML = resultadoFinal;
+    expressao = 0;
+    expressao = resultadoFinal;
+    }
+
+    if (subtracao != 0){
+    resultadoFinal = subtracao - parseFloat(expressao);
+    resultado.innerHTML = resultadoFinal;
+    expressao = 0;
+    expressao = resultadoFinal;
+    }
+
+    if (fracao != 0){
+    resultadoFinal = fracao / parseFloat(expressao);
+    resultado.innerHTML = resultadoFinal;
+    expressao = 0;
+    expressao = resultadoFinal;
+    }
+
+    if (multiplicacao != 0){
+    resultadoFinal = multiplicacao * parseFloat(expressao);
+    resultado.innerHTML = resultadoFinal;
+    expressao = 0;
+    expressao = resultadoFinal;
+    }
+    
+    })
+
+  </script>
+</html>

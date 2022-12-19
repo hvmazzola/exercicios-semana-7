@@ -1,0 +1,25 @@
+<html lang="pt-br"></html>
+
+  <div>
+    <input type="button" id="submit" name="calculate" value="Calcular">
+  </div>
+</body>
+<script>
+   const calculate = document.getElementById('submit')
+    // Crie a lógica a partir deste ponto
+   calculate.addEventListener('click', () => {
+
+      
+        let numero = 0;
+
+        for (let i = 10; i != 0; i--) {
+            numero += 10*i;
+        }
+
+        alert(numero);
+
+        console.log(numero);
+    
+    })
+</script>
+</html>
